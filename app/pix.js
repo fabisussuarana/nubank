@@ -1,12 +1,13 @@
-import { StyleSheet, View, TouchableOpacity } from 'react-native';
-import { Text, TextInput } from 'react-native-web';
+import { StyleSheet, View, TouchableOpacity, Text, TextInput } from 'react-native';
 import { MaterialCommunityIcons, FontAwesome5, FontAwesome6, MaterialIcons, Octicons, FontAwesome } from '@expo/vector-icons';
+import { useRouter } from "expo-router";
 
 export default function Pix(){
+    const router = useRouter();
     return(
         <View style={styles.container}>
             <View style={styles.iconsTop}>
-                <MaterialCommunityIcons name="close" size={28} color="#656565" onPress={() => navigation.navigate('/')}/>
+                <MaterialCommunityIcons name="close" size={28} color="#656565" onPress={() => router.push('/')}/>
                 <FontAwesome5 name="question-circle" size={24} color="#656565" />
             </View>
             <View style={{paddingInline: 20}}>
@@ -86,7 +87,8 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: '#0a0a0a',
         height: '100%',
-        paddingBlock: 20,
+        paddingBottom: 20,
+        paddingTop: 40,
     },
     iconsTop: {
         flexDirection: 'row',

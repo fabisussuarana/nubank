@@ -1,8 +1,9 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native';
 import { MaterialCommunityIcons, FontAwesome, FontAwesome5, MaterialIcons } from '@expo/vector-icons';
-import { ScrollView } from 'react-native-web';
+import { useRouter } from "expo-router";
 
 export default function App() {
+  const router = useRouter();
   return ( 
     <View style={styles.container}>
       <ScrollView contentContainerStyle={{flexGrow: 1}}>
@@ -28,13 +29,13 @@ export default function App() {
               showsHorizontalScrollIndicator={false}
               contentContainerStyle={styles.actionButtons}
             >
-              <TouchableOpacity style={styles.actionButton} onPress={() => navigation.navigate('pix')}>
+              <TouchableOpacity style={styles.actionButton} onPress={() => router.navigate('/pix')}>
                 <View style={styles.iconCircle}>
                   <MaterialIcons name="pix" size={26} color="#fff" />
                 </View>
-                <Text style={styles.actionText}>Área Pix e<br/>Transferir</Text>
+                <Text style={styles.actionText}>Área Pix e<Text>{"\n"}</Text>Transferir</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.actionButton} onPress={() => navigation.navigate('pagar')}>
+              <TouchableOpacity style={styles.actionButton} onPress={() => router.navigate('pagar')}>
                 <View style={styles.iconCircle}>
                   <MaterialCommunityIcons name="barcode" size={24} color="#fff" />
                 </View>
@@ -44,25 +45,25 @@ export default function App() {
                 <View style={styles.iconCircle}>
                   <MaterialCommunityIcons name="hand-coin-outline" size={24} color="#fff" />
                 </View>
-                <Text style={styles.actionText}>Pegar <br/>emprestado</Text>
+                <Text style={styles.actionText}>Pegar <Text>{"\n"}</Text>emprestado</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.actionButton}>
                 <View style={styles.iconCircle}>
                   <FontAwesome name="mobile-phone" size={34} color="#fff" />
                 </View>
-                <Text style={styles.actionText}>Recarga de <br/>celular</Text>
+                <Text style={styles.actionText}>Recarga de <Text>{"\n"}</Text>celular</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.actionButton}>
                 <View style={styles.iconCircle}>
                   <FontAwesome5 name="boxes" size={24} color="#fff" />
                 </View>
-                <Text style={styles.actionText}>Caixinhas e <br/>Investir</Text>
+                <Text style={styles.actionText}>Caixinhas e <Text>{"\n"}</Text>Investir</Text>
               </TouchableOpacity>
             </ScrollView>
           </View>
 
           <View>
-            <TouchableOpacity style={styles.miniCard} onPress={() => navigation.navigate('meus-cartoes')}>
+            <TouchableOpacity style={styles.miniCard} onPress={() => router.navigate('meus-cartoes')}>
               <MaterialCommunityIcons name='credit-card-chip' size={24} color={"#fff"}/>
               <Text style={styles.miniCardText}>Meus cartões</Text>
             </TouchableOpacity>

@@ -1,11 +1,12 @@
-import { StyleSheet, View } from 'react-native';
-import { Text } from 'react-native-web';
+import { StyleSheet, View, Text } from 'react-native';
 import { MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons';
+import { useRouter } from "expo-router";
 
 export default function MeusCartoes(){
+    const router = useRouter();
     return(
         <View style={styles.container}>
-            <MaterialCommunityIcons style={{paddingInline: 20}} name="close" size={28} color="#656565" onPress={() => navigation.navigate('/')}/>
+            <MaterialCommunityIcons style={{paddingInline: 20}} name="close" size={28} color="#656565" onPress={() => router.push('/')}/>
             <View style={{paddingInline: 20}}>
                 <Text style={styles.title}>Meus cartões</Text>
             </View>
@@ -64,7 +65,8 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: '#0a0a0a',
         height: '100%',
-        paddingBlock: 20,
+        paddingBottom: 20,
+        paddingTop: 40,
     },
     title: {
         fontSize: 32,
