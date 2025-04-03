@@ -3,7 +3,7 @@ import { MaterialCommunityIcons, FontAwesome, FontAwesome5, MaterialIcons } from
 import { ScrollView } from 'react-native-web';
 
 export default function App() {
-  return (
+  return ( 
     <View style={styles.container}>
       <ScrollView contentContainerStyle={{flexGrow: 1}}>
         <View style={styles.header}>
